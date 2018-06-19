@@ -13,14 +13,27 @@ var gulp = require('gulp'),
     })
     
     gulp.task('html', function() {
-        console.log('html file has been updated...');
+        browserSync.reload();
     })
     
     gulp.task('style', function() {
-        console.log('style sheet has been modified...');
+        gulp.src('./app/assets/styles/style.css')
+        .pipe(postcss([cssImport, mixin, autoprefixer, nested, simpleVar]))
+        .on('error', function(errorInfo) {
+            console.log(errorInfo.toString());
+            this.emit('end');
+        })
+        .pipe(gulp.dest('./app/temp/styles'));
     })
     
     gulp.task('watch', function() {
+        
+        browserSync.init({
+            notify: false,
+            server: {
+                baseDir: 'app'
+            }
+        })
         
         watch('./app/index.html', function() {
             gulp.start('html');
@@ -30,4 +43,9 @@ var gulp = require('gulp'),
             gulp.start('style');
         })
         
+    })
+    
+    gulp.task('cssInject', function() {
+        return gulp.src('./app/temp/styles/style.css')
+            .pipe(browserSync.stream());
     })
