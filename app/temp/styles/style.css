@@ -346,9 +346,27 @@ body {
     color: #333;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #F0980E;
+}
+
 .large-hero {
     position: relative;
+    border-bottom: 10px solid #2f5572;
 }
+
+.large-hero__image {
+        display: block;
+    }
 
 .large-hero__text-content {
         position: absolute;
@@ -363,39 +381,235 @@ body {
 .large-hero__title {
         color: #2f5572;
         font-weight: 300;
-        font-size: 4.8rem;
+        font-size: 2.4rem;
         margin: 0;
+        
+    }
+
+@media (min-width: 530px) {
+
+.large-hero__title {
+            font-size: 4.8rem
+        
+    }
     }
 
 .large-hero__subtitle {
         color: #2f5572;
         font-weight: 300;
-        font-size: 2.4rem;
+        font-size: 1.5rem;
         margin: 0;
+    }
+
+@media (min-width: 530px) {
+
+.large-hero__subtitle {
+            font-size:2.9rem
+    }
     }
 
 .large-hero__description {
         color: #FFF;
         font-weight: 100;
-        font-size: 1.875rem;
+        font-size: 1.1rem;
         text-shadow: 2px 2px 0 rgba(0,0,0,.1);
         max-width: 30rem;
         margin-left: auto;
         margin-right: auto;
     }
 
+@media (min-width: 530px) {
+
+.large-hero__description {
+            font-size: 1.875rem
+    }
+    }
+
 .btn {
     color: #FFF;
     background-color: #2f5572;
-    padding: .9rem 1.2rem;
+    padding: .75rem 1.2rem;
     text-decoration: none;
+    display: inline-block;
 }
 
 .btn--orange {
-        background-color: #F4D03F;
+        background-color: #F0980E;
     }
 
 .btn--large {
-        padding: 1.2rem 1.9rem;
+        padding: 1.1rem 1.9rem;
     }
 
+@media (min-width: 530px) {
+
+.btn--large {
+            font-size: 1.25rem;
+            padding: 1.1rem 1.9rem
+    }
+    }
+
+.wrapper {
+    overflow: hidden;
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 1236px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper--medium {
+        max-width: 967px;
+       
+    }
+
+.wrapper--b-margin {
+        margin-bottom: 1rem;
+    }
+
+@media (min-width: 530px) {
+
+.wrapper--b-margin {
+            margin-bottom: 3.875rem
+    }
+    }
+
+.wrapper .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+.page-section {
+    
+    padding: 1.5rem 0;
+}
+
+@media (min-width: 530px) {
+
+.page-section {
+        padding: 4.5rem 0
+}
+    }
+
+.page-section--blue {
+        background-color: #2f5572;
+        color: #FFF;
+    }
+
+.headline {
+    color: #2f5572;
+    font-weight: 300;
+    font-size: 1.9rem;
+}
+
+@media (min-width: 530px) {
+
+.headline {
+         font-size: 2.875rem
+}
+    }
+
+.headline--centered {
+        text-align: center;
+    }
+
+.headline--orange {
+        color: #F0980E;
+    }
+
+.headline--small {
+        font-size: 1.2rem;
+    }
+
+@media (min-width: 530px) {
+
+.headline--small {
+            font-size: 2rem
+    }
+    }
+
+.headline--narrow {
+        max-width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.headline--light {
+        font-weight: 100;
+    }
+
+.headline--b-margin-small {
+        margin-bottom: .5em;
+    }
+
+.headline--b-margin-large {
+       margin-bottom: 1.6em; 
+    }
+
+.headline--t-margin {
+        margin: 0;
+    }
+
+strong {
+    font-weight: 800;
+}
+
+.row::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+.row__gutters {
+        margin-right: -65px;
+    }
+
+.row__gutters > div {
+        padding-right: 65px;
+    }
+
+.row__b-margin-until-medium {
+        margin-bottom: 3rem;
+    }
+
+@media (min-width: 800px) {
+         
+        .row__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+        
+        .row__medium-4 {
+        float: left;
+        width: 33.33%;
+       
+    }
+    
+        .row__medium-4--larger {
+            width: 37%;
+        }
+    
+        .row__medium-8 {
+        float: left;
+        width: 66.66%;
+    }
+    
+        .row__medium-8--smaller {
+            width: 63%;
+        }
+    }
+
+.generic-content-container p {
+        line-height: 1.6;
+        margin: 1.8rem 0;
+    }
+
+@media (min-width: 530px) {
+
+.generic-content-container p {
+             font-size: 1.275rem
+    }
+    }
+
+.generic-content-container p a {
+        font-weight: 700;
+    }
