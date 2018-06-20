@@ -1,6 +1,10 @@
 .row {
     @mixin clearFix;
     
+    &--t-padding {
+        padding-top: 80px;
+    }
+    
     &__gutters {
         margin-right: -65px;
     }
@@ -9,12 +13,20 @@
         margin-right: -100px;
     }
     
+    &__gutters-small {
+        margin-right: -45px;
+    }
+    
     &__gutters > div {
         padding-right: 65px;
     }
     
     &__gutters-large > div {
         padding-right: 100px;
+    }
+    
+    &__gutter-small > div {
+        padding-right: 45px;
     }
     
     &__b-margin-until-medium {
@@ -52,4 +64,14 @@
         }
     }
     
+    &--equal-height-at-medium {
+       @mixin atMedium {
+           display: flex;
+       }
+       
+       & > div {
+           float: none;
+           display: flex;
+       }
+    }
 }
